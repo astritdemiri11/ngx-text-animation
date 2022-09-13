@@ -1,0 +1,11 @@
+<div class="container">
+  <div textScroll class="text">
+    <ng-container *ngIf="text; else elementTemplate">
+      <span>{{ text }}</span>
+    </ng-container>
+
+    <ng-template #elementTemplate>
+      <ng-content select="[text]"></ng-content>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<ng-container *ngIf="rowHeight && speed && !revealed">
+  <div #overlay class="overlay">
+    <div class="container">
+      <div *ngFor="let rowIndex of rows" [style.height.px]="rowHeight" [style.top.px]="rowHeight * rowIndex"
+        [style.animationDuration]="(speed / rows.length) + 'ms'"
+        [style.animationDelay]="(speed * rowIndex / rows.length) + 'ms'" [classList]="overlayClass + ' row'">
+        <div *ngIf="!hideCursor" [style.animationDuration]="(speed / rows.length / 40) + 'ms'"
+          [classList]="cursorClass + ' row-cursor'"></div>
+      </div>
+    </div>
+  </div>
+</ng-container>
